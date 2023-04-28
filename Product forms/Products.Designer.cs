@@ -89,6 +89,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьПродуктToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.linkLabel_ClearSearch = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -768,6 +769,7 @@
             // 
             // файлToolStripMenuItem
             // 
+            this.файлToolStripMenuItem.BackColor = System.Drawing.Color.WhiteSmoke;
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.добавитьПродуктToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
@@ -776,10 +778,24 @@
             // 
             // добавитьПродуктToolStripMenuItem
             // 
+            this.добавитьПродуктToolStripMenuItem.BackColor = System.Drawing.Color.WhiteSmoke;
             this.добавитьПродуктToolStripMenuItem.Name = "добавитьПродуктToolStripMenuItem";
             this.добавитьПродуктToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.добавитьПродуктToolStripMenuItem.Text = "Добавить продукт";
             this.добавитьПродуктToolStripMenuItem.Click += new System.EventHandler(this.добавитьПродуктToolStripMenuItem_Click);
+            // 
+            // linkLabel_ClearSearch
+            // 
+            this.linkLabel_ClearSearch.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(200)))), ((int)(((byte)(150)))));
+            this.linkLabel_ClearSearch.AutoSize = true;
+            this.linkLabel_ClearSearch.LinkColor = System.Drawing.Color.Gray;
+            this.linkLabel_ClearSearch.Location = new System.Drawing.Point(834, 81);
+            this.linkLabel_ClearSearch.Name = "linkLabel_ClearSearch";
+            this.linkLabel_ClearSearch.Size = new System.Drawing.Size(87, 13);
+            this.linkLabel_ClearSearch.TabIndex = 17;
+            this.linkLabel_ClearSearch.TabStop = true;
+            this.linkLabel_ClearSearch.Text = "Очистить поиск";
+            this.linkLabel_ClearSearch.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_ClearSearch_LinkClicked);
             // 
             // Products
             // 
@@ -787,6 +803,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(942, 725);
+            this.Controls.Add(this.linkLabel_ClearSearch);
             this.Controls.Add(this.button_PreviousPage);
             this.Controls.Add(this.button_NextPage);
             this.Controls.Add(this.numericUpDown1);
@@ -902,5 +919,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem добавитьПродуктToolStripMenuItem;
+        private System.Windows.Forms.LinkLabel linkLabel_ClearSearch;
     }
 }

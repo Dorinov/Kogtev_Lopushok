@@ -115,6 +115,13 @@ namespace Kogtev_Lopushok
             }
         }
 
+        private void linkLabel_ClearSearch_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            textBox_Search.Clear();
+            comboBox_ProductType.SelectedIndex = 0;
+            comboBox_Sort.SelectedIndex = 0;
+        }
+
         private void добавитьПродуктToolStripMenuItem_Click(object o, EventArgs e) { editProduct(0); }
         private void button_Edit1_Click(object sender, EventArgs e) { editProduct(1); }
         private void button_Edit2_Click(object sender, EventArgs e) { editProduct(2); }
@@ -230,7 +237,10 @@ namespace Kogtev_Lopushok
 
             getMaxPage();
             if (!afterEdit)
+            {
                 numericUpDown1.Value = 1;
+                fillPage(1);
+            }
             else
                 fillPage((int)numericUpDown1.Value);
 
