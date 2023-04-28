@@ -35,7 +35,7 @@ namespace Kogtev_Lopushok
         public Products(Authorization a, int r)
         {
             auth = a;
-            rules = r;
+            //rules = r;
             InitializeComponent();
 
             types = new Label[] { label_Type1, label_Type2, label_Type3, label_Type4, label_Type5, label_Type6 };
