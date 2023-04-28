@@ -19,6 +19,14 @@ namespace Kogtev_Lopushok
         DataTable products = new DataTable();
         DataTable product_types = new DataTable();
         string[] sort_table = new string[] { "Стандарт", "А-я", "Я-а", "Цена ↑", "Цена ↓" };
+        string[] sort_toQuery = new string[]
+        {
+            "order by \"Product\".\"ID\" asc",
+            "order by \"Product\".\"Title\" asc",
+            "order by \"Product\".\"Title\" desc",
+            "order by \"Product\".\"Cost\" asc",
+            "order by \"Product\".\"Cost\" desc"
+        };
         string search_text = "";
         string search_type = "";
 
@@ -30,7 +38,6 @@ namespace Kogtev_Lopushok
         Panel[] panels;
         PictureBox[] pictures;
         List<int> currentIds = new List<int>();
-
 
         public Products(Authorization a, int r)
         {
@@ -108,10 +115,26 @@ namespace Kogtev_Lopushok
             }
         }
 
+        private void добавитьПродуктToolStripMenuItem_Click(object o, EventArgs e) { editProduct(0); }
+        private void button_Edit1_Click(object sender, EventArgs e) { editProduct(1); }
+        private void button_Edit2_Click(object sender, EventArgs e) { editProduct(2); }
+        private void button_Edit3_Click(object sender, EventArgs e) { editProduct(3); }
+        private void button_Edit4_Click(object sender, EventArgs e) { editProduct(4); }
+        private void button_Edit5_Click(object sender, EventArgs e) { editProduct(5); }
+        private void button_Edit6_Click(object sender, EventArgs e) { editProduct(6); }
 
 
 
 
+
+
+
+        private void editProduct(int num)
+        {
+            int id = num == 0 ? 0 : currentIds[num - 1];
+            EditProduct ep = new EditProduct(this, id);
+            ep.ShowDialog();
+        }
 
         private void fillDataTables()
         {
@@ -185,15 +208,6 @@ namespace Kogtev_Lopushok
 
         public void applySearch(bool afterEdit = false)
         {
-            string[] sort_toQuery = new string[]
-            {
-            "order by \"Product\".\"ID\" asc",
-            "order by \"Product\".\"Title\" asc",
-            "order by \"Product\".\"Title\" desc",
-            "order by \"Product\".\"Cost\" asc",
-            "order by \"Product\".\"Cost\" desc"
-            };
-
             bool have_where = false;
             string cmd = "select \"Product\".\"ID\", \"Product\".\"Title\"," +
                 "\"ProductType\".\"Title\", \"ArticleNumber\", \"Description\", \"Image\"," +
@@ -214,16 +228,11 @@ namespace Kogtev_Lopushok
             var da = new NpgsqlDataAdapter(cmd, con);
             da.Fill(products);
 
+            getMaxPage();
             if (!afterEdit)
-            {
                 numericUpDown1.Value = 1;
-                getMaxPage();
-            }
             else
-            {
-                getMaxPage();
                 fillPage((int)numericUpDown1.Value);
-            }
 
             label_RowsCount.Text = $"Результаты: {products.Rows.Count}";
         }
@@ -235,52 +244,6 @@ namespace Kogtev_Lopushok
                 search_text = textBox_Search.Text;
                 applySearch();
             }
-        }
-
-
-
-
-
-        private void button_Edit1_Click(object sender, EventArgs e)
-        {
-            editProduct(1);
-        }
-
-        private void button_Edit2_Click(object sender, EventArgs e)
-        {
-            editProduct(2);
-        }
-
-        private void button_Edit3_Click(object sender, EventArgs e)
-        {
-            editProduct(3);
-        }
-
-        private void button_Edit4_Click(object sender, EventArgs e)
-        {
-            editProduct(4);
-        }
-
-        private void button_Edit5_Click(object sender, EventArgs e)
-        {
-            editProduct(5);
-        }
-
-        private void button_Edit6_Click(object sender, EventArgs e)
-        {
-            editProduct(6);
-        }
-
-        private void editProduct(int num)
-        {
-            EditProduct ep = new EditProduct(this, currentIds[num - 1]);
-            ep.ShowDialog();
-        }
-
-        private void добавитьПродуктToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            EditProduct ep = new EditProduct(this);
-            ep.ShowDialog();
         }
     }
 }

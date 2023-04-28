@@ -16,16 +16,16 @@ namespace Kogtev_Lopushok
         int mid;
         string lastQuery = "";
 
-        Timer timer_mat = new Timer();
+        Timer timer = new Timer();
 
         public ProductMaterials(int i)
         {
             id = i;
             InitializeComponent();
 
-            timer_mat.Interval = 2000;
-            timer_mat.Tick += new EventHandler(timer_tick_mat);
-            timer_mat.Start();
+            timer.Interval = 2000;
+            timer.Tick += new EventHandler(timer_tick);
+            timer.Start();
         }
 
         private void ProductMaterials_Load(object sender, EventArgs e)
@@ -62,8 +62,8 @@ namespace Kogtev_Lopushok
                 try
                 {
                     con.Open();
-                    using (var cmd = new NpgsqlCommand($"INSERT INTO \"ProductMaterial\" VALUES ({id}, {mid}, {numericUpDown1.Value})", con))
-                        cmd.ExecuteNonQuery();
+                    var cmd = new NpgsqlCommand($"INSERT INTO \"ProductMaterial\" VALUES ({id}, {mid}, {numericUpDown1.Value})", con);
+                    cmd.ExecuteNonQuery();
                     con.Close();
                     getCurrentMaterials();
                     comboBox1.Text = "";
@@ -113,19 +113,7 @@ namespace Kogtev_Lopushok
                 comboBox1.Items.Add($"{materials.Rows[i][1]}");
         }
 
-        private bool notCBItem()
-        {
-            bool res = true;
-            foreach (var item in comboBox1.Items)
-                if (comboBox1.Text == item.ToString())
-                {
-                    res = false;
-                    break;
-                }
-            return res;
-        }
-
-        private void timer_tick_mat(Object o, EventArgs e)
+        private void timer_tick(Object o, EventArgs e)
         {
             if (comboBox1.Text == "")
             {
@@ -138,7 +126,6 @@ namespace Kogtev_Lopushok
                 }
             }
             else
-            {
                 if (comboBox1.Text != lastQuery && notCBItem())
                 {
                     lastQuery = comboBox1.Text;
@@ -146,7 +133,16 @@ namespace Kogtev_Lopushok
                     fillComboBox();
                     comboBox1.SelectionStart = comboBox1.Text.Length;
                 }
-            }
+        }
+
+        private bool notCBItem()
+        {
+            foreach (var item in comboBox1.Items)
+                if (comboBox1.Text == item.ToString())
+                {
+                    return false;
+                }
+            return true;
         }
     }
 }

@@ -44,17 +44,17 @@
             // 
             this.panel_Login.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_Login.Controls.Add(this.textBox_Login);
-            this.panel_Login.Location = new System.Drawing.Point(115, 82);
+            this.panel_Login.Location = new System.Drawing.Point(134, 81);
             this.panel_Login.Name = "panel_Login";
-            this.panel_Login.Size = new System.Drawing.Size(350, 45);
+            this.panel_Login.Size = new System.Drawing.Size(237, 45);
             this.panel_Login.TabIndex = 0;
             // 
             // textBox_Login
             // 
             this.textBox_Login.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox_Login.Location = new System.Drawing.Point(3, 10);
+            this.textBox_Login.Location = new System.Drawing.Point(4, 10);
             this.textBox_Login.Name = "textBox_Login";
-            this.textBox_Login.Size = new System.Drawing.Size(342, 20);
+            this.textBox_Login.Size = new System.Drawing.Size(228, 20);
             this.textBox_Login.TabIndex = 0;
             this.textBox_Login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_Login_KeyDown);
             // 
@@ -62,25 +62,25 @@
             // 
             this.panel_Password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_Password.Controls.Add(this.textBox_Password);
-            this.panel_Password.Location = new System.Drawing.Point(115, 126);
+            this.panel_Password.Location = new System.Drawing.Point(134, 125);
             this.panel_Password.Name = "panel_Password";
-            this.panel_Password.Size = new System.Drawing.Size(350, 40);
+            this.panel_Password.Size = new System.Drawing.Size(237, 40);
             this.panel_Password.TabIndex = 1;
             // 
             // textBox_Password
             // 
             this.textBox_Password.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox_Password.Location = new System.Drawing.Point(3, 10);
+            this.textBox_Password.Location = new System.Drawing.Point(4, 10);
             this.textBox_Password.Name = "textBox_Password";
             this.textBox_Password.PasswordChar = '*';
-            this.textBox_Password.Size = new System.Drawing.Size(342, 20);
+            this.textBox_Password.Size = new System.Drawing.Size(228, 20);
             this.textBox_Password.TabIndex = 1;
             this.textBox_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_Password_KeyDown);
             // 
             // label_Login
             // 
             this.label_Login.AutoSize = true;
-            this.label_Login.Location = new System.Drawing.Point(120, 74);
+            this.label_Login.Location = new System.Drawing.Point(139, 73);
             this.label_Login.Name = "label_Login";
             this.label_Login.Size = new System.Drawing.Size(38, 13);
             this.label_Login.TabIndex = 2;
@@ -89,7 +89,7 @@
             // label_Password
             // 
             this.label_Password.AutoSize = true;
-            this.label_Password.Location = new System.Drawing.Point(120, 118);
+            this.label_Password.Location = new System.Drawing.Point(139, 117);
             this.label_Password.Name = "label_Password";
             this.label_Password.Size = new System.Drawing.Size(45, 13);
             this.label_Password.TabIndex = 3;
@@ -100,7 +100,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(565, 57);
+            this.label1.Size = new System.Drawing.Size(480, 57);
             this.label1.TabIndex = 4;
             this.label1.Text = "Авторизация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -110,7 +110,7 @@
             this.button_Login.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button_Login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
             this.button_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Login.Location = new System.Drawing.Point(232, 175);
+            this.button_Login.Location = new System.Drawing.Point(195, 177);
             this.button_Login.Name = "button_Login";
             this.button_Login.Size = new System.Drawing.Size(115, 25);
             this.button_Login.TabIndex = 5;
@@ -123,7 +123,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(589, 252);
+            this.ClientSize = new System.Drawing.Size(504, 252);
             this.Controls.Add(this.button_Login);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_Password);

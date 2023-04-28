@@ -66,9 +66,7 @@ namespace Kogtev_Lopushok
                     con.Close();
                 }
                 else
-                {
                     MessageBox.Show("Аккаунт с таким логином не существует!", "Ошибка авторизации");
-                }
             }
         }
 

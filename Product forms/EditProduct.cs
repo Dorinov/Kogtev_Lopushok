@@ -204,19 +204,11 @@ namespace Kogtev_Lopushok
 
         private string getNewArticle()
         {
-            List<string> values = new List<string>();
-            con.Open();
-            using (var cmd = new NpgsqlCommand("select \"ArticleNumber\" from \"Product\"", con))
-            {
-                var reader = cmd.ExecuteReader();
-                while (reader.Read())
-                    values.Add(reader.GetString(0));
-            }
-            con.Close();
+            string res = "";
+            var values = getAllArticles();
 
             Random r = new Random();
             string alf = "0123456789";
-            string res = "";
 
             do
             {
@@ -233,13 +225,23 @@ namespace Kogtev_Lopushok
 
         private bool haveArticle(List<string> a, string b)
         {
-            bool res = false;
             foreach (string s in a)
                 if (s == b)
-                {
-                    res = true;
-                    break;
-                }
+                    return true;
+            return false;
+        }
+
+        private List<string> getAllArticles()
+        {
+            var res = new List<string>();
+            con.Open();
+            using (var cmd = new NpgsqlCommand("select \"ArticleNumber\" from \"Product\"", con))
+            {
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                    res.Add(reader.GetString(0));
+            }
+            con.Close();
             return res;
         }
     }
