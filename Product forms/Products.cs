@@ -117,34 +117,56 @@ namespace Kogtev_Lopushok
 
         private void linkLabel_ClearSearch_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            textBox_Search.Clear();
-            comboBox_ProductType.SelectedIndex = 0;
-            comboBox_Sort.SelectedIndex = 0;
+            clearFilters();
         }
 
-        private void добавитьПродуктToolStripMenuItem_Click(object o, EventArgs e) { editProduct(0); }
-        private void button_Edit1_Click(object sender, EventArgs e) { editProduct(1); }
-        private void button_Edit2_Click(object sender, EventArgs e) { editProduct(2); }
-        private void button_Edit3_Click(object sender, EventArgs e) { editProduct(3); }
-        private void button_Edit4_Click(object sender, EventArgs e) { editProduct(4); }
-        private void button_Edit5_Click(object sender, EventArgs e) { editProduct(5); }
-        private void button_Edit6_Click(object sender, EventArgs e) { editProduct(6); }
-
-
-
-
-
-
-
-        private void editProduct(int num)
+        private void добавитьПродуктToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int id = num == 0 ? 0 : currentIds[num - 1];
-            EditProduct ep = new EditProduct(this, id);
+            EditProduct ep = new EditProduct(null, this, 0);
             ep.ShowDialog();
         }
 
-        private void fillDataTables()
+        private void типыПродуктовToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ProductTypes pt = new ProductTypes(this);
+            pt.ShowDialog();
+        }
+
+        private void складыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Storages st = new Storages();
+            st.ShowDialog();
+        }
+
+        private void материалыToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Materials mt = new Materials();
+            mt.ShowDialog();
+        }
+
+        private void типыМатериаловToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MaterialTypes mts = new MaterialTypes();
+            mts.ShowDialog();
+        }
+
+        private void button_More1_Click(object sender, EventArgs e) { moreInfo(0); }
+        private void button_More2_Click(object sender, EventArgs e) { moreInfo(1); }
+        private void button_More3_Click(object sender, EventArgs e) { moreInfo(2); }
+        private void button_More4_Click(object sender, EventArgs e) { moreInfo(3); }
+        private void button_More5_Click(object sender, EventArgs e) { moreInfo(4); }
+        private void button_More6_Click(object sender, EventArgs e) { moreInfo(5); }
+
+
+
+
+
+
+
+        public void fillDataTables()
+        {
+            products.Clear();
+            product_types.Clear();
             var da1 = new NpgsqlDataAdapter("select \"Product\".\"ID\", \"Product\".\"Title\"," +
                 "\"ProductType\".\"Title\", \"ArticleNumber\", \"Description\", \"Image\"," +
                 "\"Cost\" from \"Product\" inner join \"ProductType\" " +
@@ -156,8 +178,11 @@ namespace Kogtev_Lopushok
             label_RowsCount.Text = $"Результаты: {products.Rows.Count}";
         }
 
-        private void fillComboBoxes()
+        public void fillComboBoxes()
         {
+            comboBox_ProductType.Items.Clear();
+            comboBox_Sort.Items.Clear();
+
             comboBox_ProductType.Items.Add("Все");
 
             foreach (string s in sort_table)
@@ -167,6 +192,13 @@ namespace Kogtev_Lopushok
 
             comboBox_Sort.SelectedIndex = 0;
             comboBox_ProductType.SelectedIndex = 0;
+        }
+
+        public void clearFilters()
+        {
+            textBox_Search.Clear();
+            comboBox_ProductType.SelectedIndex = 0;
+            comboBox_Sort.SelectedIndex = 0;
         }
 
         private void getMaxPage()
@@ -254,6 +286,11 @@ namespace Kogtev_Lopushok
                 search_text = textBox_Search.Text;
                 applySearch();
             }
+        }
+        private void moreInfo(int num)
+        {
+            MoreInfo m = new MoreInfo(this, currentIds[num]);
+            m.ShowDialog();
         }
     }
 }

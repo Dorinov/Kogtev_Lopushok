@@ -35,7 +35,7 @@
             this.label_Sort = new System.Windows.Forms.Label();
             this.label_ProductType = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button_Edit1 = new System.Windows.Forms.Button();
+            this.button_More1 = new System.Windows.Forms.Button();
             this.label_Cost1 = new System.Windows.Forms.Label();
             this.label_Desc1 = new System.Windows.Forms.Label();
             this.label_Article1 = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label_Cost2 = new System.Windows.Forms.Label();
-            this.button_Edit2 = new System.Windows.Forms.Button();
+            this.button_More2 = new System.Windows.Forms.Button();
             this.label_Desc2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label_Article2 = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@
             this.label_Type2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_Cost3 = new System.Windows.Forms.Label();
-            this.button_Edit3 = new System.Windows.Forms.Button();
+            this.button_More3 = new System.Windows.Forms.Button();
             this.label_Desc3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label_Article3 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             this.label_Type3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label_Cost4 = new System.Windows.Forms.Label();
-            this.button_Edit4 = new System.Windows.Forms.Button();
+            this.button_More4 = new System.Windows.Forms.Button();
             this.label_Desc4 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label_Article4 = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@
             this.label_Title4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label_Cost5 = new System.Windows.Forms.Label();
-            this.button_Edit5 = new System.Windows.Forms.Button();
+            this.button_More5 = new System.Windows.Forms.Button();
             this.label_Desc5 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label_Article5 = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@
             this.label_Title5 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label_Cost6 = new System.Windows.Forms.Label();
-            this.button_Edit6 = new System.Windows.Forms.Button();
+            this.button_More6 = new System.Windows.Forms.Button();
             this.label_Desc6 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label_Article6 = new System.Windows.Forms.Label();
@@ -88,8 +88,14 @@
             this.button_PreviousPage = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьПродуктToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.linkLabel_ClearSearch = new System.Windows.Forms.LinkLabel();
+            this.продуктToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьПродуктToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.типыПродуктовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.складыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.материалыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.материалыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.типыМатериаловToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -164,7 +170,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button_Edit1);
+            this.panel1.Controls.Add(this.button_More1);
             this.panel1.Controls.Add(this.label_Cost1);
             this.panel1.Controls.Add(this.label_Desc1);
             this.panel1.Controls.Add(this.label_Article1);
@@ -176,19 +182,19 @@
             this.panel1.Size = new System.Drawing.Size(455, 190);
             this.panel1.TabIndex = 6;
             // 
-            // button_Edit1
+            // button_More1
             // 
-            this.button_Edit1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button_Edit1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
-            this.button_Edit1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Edit1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_Edit1.Location = new System.Drawing.Point(286, 166);
-            this.button_Edit1.Name = "button_Edit1";
-            this.button_Edit1.Size = new System.Drawing.Size(168, 23);
-            this.button_Edit1.TabIndex = 16;
-            this.button_Edit1.Text = "Редактировать";
-            this.button_Edit1.UseVisualStyleBackColor = false;
-            this.button_Edit1.Click += new System.EventHandler(this.button_Edit1_Click);
+            this.button_More1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button_More1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
+            this.button_More1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_More1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_More1.Location = new System.Drawing.Point(286, 166);
+            this.button_More1.Name = "button_More1";
+            this.button_More1.Size = new System.Drawing.Size(168, 23);
+            this.button_More1.TabIndex = 16;
+            this.button_More1.Text = "Подробнее";
+            this.button_More1.UseVisualStyleBackColor = false;
+            this.button_More1.Click += new System.EventHandler(this.button_More1_Click);
             // 
             // label_Cost1
             // 
@@ -254,7 +260,7 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label_Cost2);
-            this.panel2.Controls.Add(this.button_Edit2);
+            this.panel2.Controls.Add(this.button_More2);
             this.panel2.Controls.Add(this.label_Desc2);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label_Article2);
@@ -275,19 +281,19 @@
             this.label_Cost2.TabIndex = 21;
             this.label_Cost2.Text = "label1";
             // 
-            // button_Edit2
+            // button_More2
             // 
-            this.button_Edit2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button_Edit2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
-            this.button_Edit2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Edit2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_Edit2.Location = new System.Drawing.Point(286, 166);
-            this.button_Edit2.Name = "button_Edit2";
-            this.button_Edit2.Size = new System.Drawing.Size(168, 23);
-            this.button_Edit2.TabIndex = 17;
-            this.button_Edit2.Text = "Редактировать";
-            this.button_Edit2.UseVisualStyleBackColor = false;
-            this.button_Edit2.Click += new System.EventHandler(this.button_Edit2_Click);
+            this.button_More2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button_More2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
+            this.button_More2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_More2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_More2.Location = new System.Drawing.Point(286, 166);
+            this.button_More2.Name = "button_More2";
+            this.button_More2.Size = new System.Drawing.Size(168, 23);
+            this.button_More2.TabIndex = 17;
+            this.button_More2.Text = "Подробнее";
+            this.button_More2.UseVisualStyleBackColor = false;
+            this.button_More2.Click += new System.EventHandler(this.button_More2_Click);
             // 
             // label_Desc2
             // 
@@ -343,7 +349,7 @@
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label_Cost3);
-            this.panel3.Controls.Add(this.button_Edit3);
+            this.panel3.Controls.Add(this.button_More3);
             this.panel3.Controls.Add(this.label_Desc3);
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Controls.Add(this.label_Article3);
@@ -364,19 +370,19 @@
             this.label_Cost3.TabIndex = 21;
             this.label_Cost3.Text = "label1";
             // 
-            // button_Edit3
+            // button_More3
             // 
-            this.button_Edit3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button_Edit3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
-            this.button_Edit3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Edit3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_Edit3.Location = new System.Drawing.Point(286, 166);
-            this.button_Edit3.Name = "button_Edit3";
-            this.button_Edit3.Size = new System.Drawing.Size(168, 23);
-            this.button_Edit3.TabIndex = 17;
-            this.button_Edit3.Text = "Редактировать";
-            this.button_Edit3.UseVisualStyleBackColor = false;
-            this.button_Edit3.Click += new System.EventHandler(this.button_Edit3_Click);
+            this.button_More3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button_More3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
+            this.button_More3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_More3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_More3.Location = new System.Drawing.Point(286, 166);
+            this.button_More3.Name = "button_More3";
+            this.button_More3.Size = new System.Drawing.Size(168, 23);
+            this.button_More3.TabIndex = 17;
+            this.button_More3.Text = "Подробнее";
+            this.button_More3.UseVisualStyleBackColor = false;
+            this.button_More3.Click += new System.EventHandler(this.button_More3_Click);
             // 
             // label_Desc3
             // 
@@ -432,7 +438,7 @@
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label_Cost4);
-            this.panel4.Controls.Add(this.button_Edit4);
+            this.panel4.Controls.Add(this.button_More4);
             this.panel4.Controls.Add(this.label_Desc4);
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Controls.Add(this.label_Article4);
@@ -453,19 +459,19 @@
             this.label_Cost4.TabIndex = 26;
             this.label_Cost4.Text = "label1";
             // 
-            // button_Edit4
+            // button_More4
             // 
-            this.button_Edit4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button_Edit4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
-            this.button_Edit4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Edit4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_Edit4.Location = new System.Drawing.Point(286, 166);
-            this.button_Edit4.Name = "button_Edit4";
-            this.button_Edit4.Size = new System.Drawing.Size(168, 23);
-            this.button_Edit4.TabIndex = 17;
-            this.button_Edit4.Text = "Редактировать";
-            this.button_Edit4.UseVisualStyleBackColor = false;
-            this.button_Edit4.Click += new System.EventHandler(this.button_Edit4_Click);
+            this.button_More4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button_More4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
+            this.button_More4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_More4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_More4.Location = new System.Drawing.Point(286, 166);
+            this.button_More4.Name = "button_More4";
+            this.button_More4.Size = new System.Drawing.Size(168, 23);
+            this.button_More4.TabIndex = 17;
+            this.button_More4.Text = "Подробнее";
+            this.button_More4.UseVisualStyleBackColor = false;
+            this.button_More4.Click += new System.EventHandler(this.button_More4_Click);
             // 
             // label_Desc4
             // 
@@ -521,7 +527,7 @@
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.label_Cost5);
-            this.panel5.Controls.Add(this.button_Edit5);
+            this.panel5.Controls.Add(this.button_More5);
             this.panel5.Controls.Add(this.label_Desc5);
             this.panel5.Controls.Add(this.pictureBox5);
             this.panel5.Controls.Add(this.label_Article5);
@@ -542,19 +548,19 @@
             this.label_Cost5.TabIndex = 31;
             this.label_Cost5.Text = "label1";
             // 
-            // button_Edit5
+            // button_More5
             // 
-            this.button_Edit5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button_Edit5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
-            this.button_Edit5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Edit5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_Edit5.Location = new System.Drawing.Point(286, 166);
-            this.button_Edit5.Name = "button_Edit5";
-            this.button_Edit5.Size = new System.Drawing.Size(168, 23);
-            this.button_Edit5.TabIndex = 17;
-            this.button_Edit5.Text = "Редактировать";
-            this.button_Edit5.UseVisualStyleBackColor = false;
-            this.button_Edit5.Click += new System.EventHandler(this.button_Edit5_Click);
+            this.button_More5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button_More5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
+            this.button_More5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_More5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_More5.Location = new System.Drawing.Point(286, 166);
+            this.button_More5.Name = "button_More5";
+            this.button_More5.Size = new System.Drawing.Size(168, 23);
+            this.button_More5.TabIndex = 17;
+            this.button_More5.Text = "Подробнее";
+            this.button_More5.UseVisualStyleBackColor = false;
+            this.button_More5.Click += new System.EventHandler(this.button_More5_Click);
             // 
             // label_Desc5
             // 
@@ -610,7 +616,7 @@
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.label_Cost6);
-            this.panel6.Controls.Add(this.button_Edit6);
+            this.panel6.Controls.Add(this.button_More6);
             this.panel6.Controls.Add(this.label_Desc6);
             this.panel6.Controls.Add(this.pictureBox6);
             this.panel6.Controls.Add(this.label_Article6);
@@ -631,19 +637,19 @@
             this.label_Cost6.TabIndex = 36;
             this.label_Cost6.Text = "label1";
             // 
-            // button_Edit6
+            // button_More6
             // 
-            this.button_Edit6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button_Edit6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
-            this.button_Edit6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Edit6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_Edit6.Location = new System.Drawing.Point(286, 166);
-            this.button_Edit6.Name = "button_Edit6";
-            this.button_Edit6.Size = new System.Drawing.Size(168, 23);
-            this.button_Edit6.TabIndex = 17;
-            this.button_Edit6.Text = "Редактировать";
-            this.button_Edit6.UseVisualStyleBackColor = false;
-            this.button_Edit6.Click += new System.EventHandler(this.button_Edit6_Click);
+            this.button_More6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button_More6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
+            this.button_More6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_More6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_More6.Location = new System.Drawing.Point(286, 166);
+            this.button_More6.Name = "button_More6";
+            this.button_More6.Size = new System.Drawing.Size(168, 23);
+            this.button_More6.TabIndex = 17;
+            this.button_More6.Text = "Подробнее";
+            this.button_More6.UseVisualStyleBackColor = false;
+            this.button_More6.Click += new System.EventHandler(this.button_More6_Click);
             // 
             // label_Desc6
             // 
@@ -771,18 +777,12 @@
             // 
             this.файлToolStripMenuItem.BackColor = System.Drawing.Color.WhiteSmoke;
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавитьПродуктToolStripMenuItem});
+            this.продуктToolStripMenuItem,
+            this.складыToolStripMenuItem,
+            this.материалыToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
-            // 
-            // добавитьПродуктToolStripMenuItem
-            // 
-            this.добавитьПродуктToolStripMenuItem.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.добавитьПродуктToolStripMenuItem.Name = "добавитьПродуктToolStripMenuItem";
-            this.добавитьПродуктToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.добавитьПродуктToolStripMenuItem.Text = "Добавить продукт";
-            this.добавитьПродуктToolStripMenuItem.Click += new System.EventHandler(this.добавитьПродуктToolStripMenuItem_Click);
             // 
             // linkLabel_ClearSearch
             // 
@@ -796,6 +796,59 @@
             this.linkLabel_ClearSearch.TabStop = true;
             this.linkLabel_ClearSearch.Text = "Очистить поиск";
             this.linkLabel_ClearSearch.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_ClearSearch_LinkClicked);
+            // 
+            // продуктToolStripMenuItem
+            // 
+            this.продуктToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавитьПродуктToolStripMenuItem,
+            this.типыПродуктовToolStripMenuItem});
+            this.продуктToolStripMenuItem.Name = "продуктToolStripMenuItem";
+            this.продуктToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.продуктToolStripMenuItem.Text = "Продукт";
+            // 
+            // добавитьПродуктToolStripMenuItem
+            // 
+            this.добавитьПродуктToolStripMenuItem.Name = "добавитьПродуктToolStripMenuItem";
+            this.добавитьПродуктToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.добавитьПродуктToolStripMenuItem.Text = "Добавить продукт";
+            this.добавитьПродуктToolStripMenuItem.Click += new System.EventHandler(this.добавитьПродуктToolStripMenuItem_Click);
+            // 
+            // типыПродуктовToolStripMenuItem
+            // 
+            this.типыПродуктовToolStripMenuItem.Name = "типыПродуктовToolStripMenuItem";
+            this.типыПродуктовToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.типыПродуктовToolStripMenuItem.Text = "Типы продуктов";
+            this.типыПродуктовToolStripMenuItem.Click += new System.EventHandler(this.типыПродуктовToolStripMenuItem_Click);
+            // 
+            // складыToolStripMenuItem
+            // 
+            this.складыToolStripMenuItem.Name = "складыToolStripMenuItem";
+            this.складыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.складыToolStripMenuItem.Text = "Склады";
+            this.складыToolStripMenuItem.Click += new System.EventHandler(this.складыToolStripMenuItem_Click);
+            // 
+            // материалыToolStripMenuItem
+            // 
+            this.материалыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.материалыToolStripMenuItem1,
+            this.типыМатериаловToolStripMenuItem});
+            this.материалыToolStripMenuItem.Name = "материалыToolStripMenuItem";
+            this.материалыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.материалыToolStripMenuItem.Text = "Материалы";
+            // 
+            // материалыToolStripMenuItem1
+            // 
+            this.материалыToolStripMenuItem1.Name = "материалыToolStripMenuItem1";
+            this.материалыToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.материалыToolStripMenuItem1.Text = "Материалы";
+            this.материалыToolStripMenuItem1.Click += new System.EventHandler(this.материалыToolStripMenuItem1_Click);
+            // 
+            // типыМатериаловToolStripMenuItem
+            // 
+            this.типыМатериаловToolStripMenuItem.Name = "типыМатериаловToolStripMenuItem";
+            this.типыМатериаловToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.типыМатериаловToolStripMenuItem.Text = "Типы материалов";
+            this.типыМатериаловToolStripMenuItem.Click += new System.EventHandler(this.типыМатериаловToolStripMenuItem_Click);
             // 
             // Products
             // 
@@ -885,12 +938,12 @@
         private System.Windows.Forms.Label label_Article1;
         private System.Windows.Forms.Label label_Title1;
         private System.Windows.Forms.Label label_Type1;
-        private System.Windows.Forms.Button button_Edit1;
-        private System.Windows.Forms.Button button_Edit2;
-        private System.Windows.Forms.Button button_Edit3;
-        private System.Windows.Forms.Button button_Edit4;
-        private System.Windows.Forms.Button button_Edit6;
-        private System.Windows.Forms.Button button_Edit5;
+        private System.Windows.Forms.Button button_More1;
+        private System.Windows.Forms.Button button_More2;
+        private System.Windows.Forms.Button button_More3;
+        private System.Windows.Forms.Button button_More4;
+        private System.Windows.Forms.Button button_More6;
+        private System.Windows.Forms.Button button_More5;
         private System.Windows.Forms.Label label_Cost2;
         private System.Windows.Forms.Label label_Desc2;
         private System.Windows.Forms.Label label_Article2;
@@ -918,7 +971,13 @@
         private System.Windows.Forms.Label label_Title6;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem добавитьПродуктToolStripMenuItem;
         private System.Windows.Forms.LinkLabel linkLabel_ClearSearch;
+        private System.Windows.Forms.ToolStripMenuItem продуктToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem добавитьПродуктToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem типыПродуктовToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem складыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem материалыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem материалыToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem типыМатериаловToolStripMenuItem;
     }
 }

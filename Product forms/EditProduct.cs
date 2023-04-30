@@ -11,14 +11,23 @@ namespace Kogtev_Lopushok
     public partial class EditProduct : Form
     {
         NpgsqlConnection con = new NpgsqlConnection(Authorization.con_string);
+        MoreInfo mi;
         Products pr;
         int id;
+
+        List<int> storageIds = new List<int>();
+        List<int> newStorageIds = new List<int>();
+        List<string> storageNames = new List<string>();
+        List<string> storageAddress = new List<string>();
+        List<int> counts = new List<int>();
+        int storageLastIndex = 0;
 
         DataTable types = new DataTable();
         string productImage = null;
 
-        public EditProduct(Products p, int i = 0)
+        public EditProduct(MoreInfo m, Products p, int i = 0)
         {
+            mi = m;
             pr = p;
             id = i;
             InitializeComponent();
@@ -26,6 +35,7 @@ namespace Kogtev_Lopushok
 
         private void EditProduct_Load(object sender, EventArgs e)
         {
+            fillStorageInfo();
             fillTypes();
             fillForm();
         }
@@ -64,10 +74,59 @@ namespace Kogtev_Lopushok
             pm.ShowDialog();
         }
 
+        private void comboBox_Storage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label_StorageAddress.Text = $"Адрес:\n{storageAddress[comboBox_Storage.SelectedIndex]}";
+            numericUpDown1.Value = counts[comboBox_Storage.SelectedIndex];
+            storageLastIndex = comboBox_Storage.SelectedIndex;
+        }
+
+        private void numericUpDown1_Leave(object sender, EventArgs e)
+        {
+            try { counts[storageLastIndex] = (int)numericUpDown1.Value; } catch { }
+        }
 
 
 
 
+
+        private void fillStorageInfo()
+        {
+            con.Open();
+            var cmd = new NpgsqlCommand("select * from \"Storage\" order by \"ID\";", con);
+            var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                storageIds.Add(reader.GetInt32(0));
+                storageNames.Add(reader.GetString(1));
+                comboBox_Storage.Items.Add(reader.GetString(1));
+                storageAddress.Add(reader.GetString(2));
+            }
+            reader.Close();
+
+            if (id != 0)
+            {
+                cmd = new NpgsqlCommand($"select \"Count\" from \"StorageAvailability\" where \"ProductID\" = {id} order by \"StorageID\";", con);
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                    counts.Add(reader.GetInt32(0));
+                reader.Close();
+
+                int index = counts.Count;
+                while (counts.Count != storageIds.Count)
+                {
+                    newStorageIds.Add(storageIds[index]);
+                    counts.Add(0);
+                    index++;
+                }
+            }
+            else
+                for (int i = 0; i < storageIds.Count; i++)
+                    counts.Add(0);
+            con.Close();
+
+            comboBox_Storage.SelectedIndex = 0;
+        }
 
         private void fillTypes()
         {
@@ -115,8 +174,10 @@ namespace Kogtev_Lopushok
             else
             {
                 textBox_Article.Text = getNewArticle();
-                button_ProductDel.Enabled = false;
                 button_ChangeMaterials.Enabled = false;
+                button_ProductDel.Enabled = false;
+                comboBox_Storage.Enabled = false;
+                numericUpDown1.Enabled = false;
             }
         }
 
@@ -139,7 +200,6 @@ namespace Kogtev_Lopushok
                 {
                     cmd_text = $"UPDATE \"Product\" SET \"Title\" = '{textBox_Name.Text}'," +
                         $"\"ProductTypeID\" = {types.Rows[comboBox_Type.SelectedIndex][0]}," +
-                        $"\"ArticleNumber\" = '{textBox_Article.Text}'," +
                         $"\"Description\" = '{richTextBox_Desc.Text}'," +
                         $"\"Image\" = '{productImage}'," +
                         $"\"Cost\" = {price} " +
@@ -151,8 +211,12 @@ namespace Kogtev_Lopushok
                 cmd.ExecuteNonQuery();
                 con.Close();
 
+                saveStorageInfo(textBox_Article.Text);
+
                 MessageBox.Show("Данные успешно сохранены", "Редактор");
 
+                if (mi != null)
+                    mi.closeForm();
                 pr.applySearch(true);
 
                 Close();
@@ -161,6 +225,58 @@ namespace Kogtev_Lopushok
             {
                 MessageBox.Show(ex.ToString(), "Ошибка");
             }
+        }
+
+        private void saveStorageInfo(string article)
+        {
+            string cmd_text = "";
+            int c = 0;
+            if (id == 0)
+            {
+                int _id = getProductIdByArticle(article);
+                foreach (int sid in storageIds)
+                {
+                    cmd_text += $"insert into \"StorageAvailability\" values({sid}, {_id}, {counts[c]});\n";
+                    c++;
+                }
+            }
+            else
+            {
+                foreach (int sid in storageIds)
+                {
+                    if (isNewStorage(sid))
+                        cmd_text += $"insert into \"StorageAvailability\" values({sid}, {id}, {counts[c]});\n";
+                    else
+                        cmd_text += $"update \"StorageAvailability\" set \"Count\" = {counts[c]} " +
+                            $"where \"StorageID\" = {sid} and \"ProductID\" = {id};\n";
+                    c++;
+                }
+            }
+
+            con.Open();
+            var cmd = new NpgsqlCommand(cmd_text, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        private bool isNewStorage(int tid)
+        {
+            foreach (int i in newStorageIds)
+                if (i == tid)
+                    return true;
+            return false;
+        }
+
+        private int getProductIdByArticle(string article)
+        {
+            int res = 0;
+            con.Open();
+            var cmd = new NpgsqlCommand($"select \"ID\" from \"Product\" where \"ArticleNumber\" = '{article}';", con);
+            var reader = cmd.ExecuteReader();
+            if (reader.Read())
+                res = reader.GetInt32(0);
+            con.Close();
+            return res;
         }
 
         private void changeImagePath()
@@ -186,11 +302,14 @@ namespace Kogtev_Lopushok
             try
             {
                 var cmd = new NpgsqlCommand($"delete from \"Product\" where \"ID\" = {id};" +
-                    $"delete from \"ProductMaterial\" where \"ProductID\" = {id}; ", con);
+                    $"delete from \"ProductMaterial\" where \"ProductID\" = {id};" +
+                    $"delete from \"StorageAvailability\" where \"ProductID\" = {id};", con);
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Продукт успешно удален", "Удаление");
 
+                if (mi != null)
+                    mi.closeForm();
                 pr.applySearch(true);
 
                 Close();

@@ -100,11 +100,29 @@
     <Compile Include="Auth forms\Authorization.Designer.cs">
       <DependentUpon>Authorization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Other\MaterialTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other\MaterialTypes.Designer.cs">
+      <DependentUpon>MaterialTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Other\Materials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other\Materials.Designer.cs">
+      <DependentUpon>Materials.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product forms\EditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Product forms\EditProduct.Designer.cs">
       <DependentUpon>EditProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product forms\MoreInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product forms\MoreInfo.Designer.cs">
+      <DependentUpon>MoreInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Product forms\ProductMaterials.cs">
       <SubType>Form</SubType>
@@ -118,19 +136,43 @@
     <Compile Include="Product forms\Products.Designer.cs">
       <DependentUpon>Products.cs</DependentUpon>
     </Compile>
+    <Compile Include="Product forms\ProductTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product forms\ProductTypes.Designer.cs">
+      <DependentUpon>ProductTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Standart files\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Other\Storages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other\Storages.Designer.cs">
+      <DependentUpon>Storages.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Auth forms\Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Other\MaterialTypes.resx">
+      <DependentUpon>MaterialTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other\Materials.resx">
+      <DependentUpon>Materials.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Product forms\EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product forms\MoreInfo.resx">
+      <DependentUpon>MoreInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product forms\ProductMaterials.resx">
       <DependentUpon>ProductMaterials.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product forms\Products.resx">
       <DependentUpon>Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product forms\ProductTypes.resx">
+      <DependentUpon>ProductTypes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -141,6 +183,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Other\Storages.resx">
+      <DependentUpon>Storages.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Standart files\packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
